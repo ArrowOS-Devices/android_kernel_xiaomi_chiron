@@ -11,6 +11,9 @@ obj-$(CONFIG_SND_SOC_QDSP6V2) += snd-soc-qdsp6v2.o msm-pcm-dtmf-v2.o \
 				 msm-dai-stub-v2.o
 obj-$(CONFIG_SND_SOC_QDSP6V2_VM) += snd-soc-qdsp6v2.o msm-pcm-dtmf-v2.o \
 				 msm-dai-stub-v2.o
+
+obj-$(CONFIG_MACH_XIAOMI_MSM8998) += msm-elliptic.o apr_elliptic.o
+
 obj-$(CONFIG_SND_HWDEP) += msm-pcm-routing-devdep.o
 obj-$(CONFIG_DOLBY_DAP) += msm-dolby-dap-config.o
 obj-$(CONFIG_DOLBY_DS2) += msm-ds2-dap-config.o
@@ -27,3 +30,5 @@ obj-$(CONFIG_AUDIO_OCMEM) += ocmem-audio.o
 subdir-ccflags-y += \
 	-Wno-non-literal-null-conversion \
 	-Wno-duplicate-decl-specifier
+
+EXTRA_CFLAGS += -I$(srctree)
